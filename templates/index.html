@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - Impact Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='favicon.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename='apple-touch-icon.png') }}" rel="apple-touch-icon">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="{{ url_for('static', filename='aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='custom.css') }}" rel="stylesheet">
+  <!-- Main CSS File -->
+  <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+</head>
+
+<body class="index-page">
+  <header id="header" class="header fixed-top">
+    <div class="branding d-flex align-items-cente">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="{{ url_for('static', filename='logo.png') }}" alt=""> -->
+          <h1 class="sitename">AquaCuyo</h1>
+          <span>.</span>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Inicio<br></a></li>
+            <li><a href="#about">Sobre nosotros</a></li>
+            <li><a href="#ing">Ingeniería del Modelo</a></li>
+            <li><a href="#team">Equipo</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Hero Section -->
+    <section id="hero" class="hero section accent-background">
+
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-5 justify-content-between">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <h2><span>Bienvenidos a </span><span class="accent">AquaCuyo</span></h2>
+            <p>Sistema Para la Predicción del Caudal en
+              Cuerpos de Agua que Abastecen Embalses
+              de la Región de Cuyo,
+              en Mendoza, Argentina.</p>
+          </div>
+          <div class="col-lg-5 order-1 order-lg-2">
+            <img src="{{ url_for('static', filename='start.jpg') }}" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="icon-boxes position-relative" data-aos="fade-up" data-aos-delay="200">
+        <div class="container position-relative">
+          <div class="row gy-4 mt-5">
+
+            <div class="col-xl-3 col-md-6">
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-graph-up"></i></div>
+                <h4 class="title"><a href="" class="stretched-link">Sistema de Predicción</a></h4>
+              </div>
+            </div><!--End Icon Box -->
+
+            <div class="col-xl-3 col-md-6">
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-eye"></i></div>
+                <h4 class="title"><a href="" class="stretched-link">Machine Learning Supervisado</a></h4>
+              </div>
+            </div><!--End Icon Box -->
+
+            <div class="col-xl-3 col-md-6">
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-geo-alt"></i></div>
+                <h4 class="title"><a href="" class="stretched-link">Cuyo, Mendoza, Argentina</a></h4>
+              </div>
+            </div><!--End Icon Box -->
+
+            <div class="col-xl-3 col-md-6">
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-person-standing-dress"></i></div>
+                <h4 class="title"><a href="" class="stretched-link">Producción y Consumo Responsable</a></h4>
+              </div>
+            </div><!--End Icon Box -->
+
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>¿De qué trata el proyecto?<br></h2>
+          <p>Se propone el desarrollo de un modelo de Machine Learning Supervisado para la
+          predicción del caudal en cuerpos de agua que abastecen represas hidroeléctricas,
+          de manera que se utilice para alertar cada vez que se esperan sequías y pueda
+          inicializarse un sistema de control de agua para regular el consumo</p>
+          <p>La información la obtendremos de varios sistemas de datos abiertos de Argentina</p>
+          <ul>
+            <i class="bi bi-check-circle-fill"></i> 
+              <a href="https://www.ina.gov.ar/archivos/observatorio/OHN_informe_2022-05.pdf" target="_blank">
+                Informe O.H.N. - Mayo 2022 (PDF)
+              </a>
+          </ul>
+          <ul>
+            <i class="bi bi-check-circle-fill"></i> 
+              <a href="https://sites.google.com/view/nieve-mendoza/" target="_blank">
+                Sitio sobre Nieve en Mendoza (Google Sites)
+              </a>
+          </ul>
+          <ul>
+            <i class="bi bi-check-circle-fill"></i> 
+              <a href="http://www.meteorologica.org.ar/wp-content/uploads/2022/09/aumassanne.pdf" target="_blank">
+                Aumassanne et al. (2022) – PDF
+              </a>
+          </ul>
+          <ul>
+            <i class="bi bi-check-circle-fill"></i> 
+              <a href="https://nsidc.org/data/mod10a2/versions/61" target="_blank">
+                Datos MOD10A2 v6.1 – NSIDC
+              </a>
+          </ul>
+          <ul>
+            <i class="bi bi-check-circle-fill"></i> 
+              <a href="https://www.scielo.org.ar/pdf/meteoro/v41n1/v41n1a02.pdf" target="_blank">
+                Artículo en SciELO – Meteorológica
+              </a>
+          </ul>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3>CONTEXTO</h3>
+            <p>La escasez de agua comprende una problemática ampliamente conocida a nivel global, y la sociedad se encuentra cada vez más 
+              comprometida e informada al respecto de esta cuestión. En la actualidad, gran parte de los esfuerzos de innovación, tanto en la industria 
+              como en otros campos de conocimiento, se orientan a reducir el consumo de agua, y, en particular, el aprendizaje supervisado consta de 
+              herramientas útiles para idear soluciones que ayuden a paliar este problema de común conocimiento. Con el fin de contextualizar con mayor 
+              profundidad, la matriz de generación de energía eléctrica en Argentina posee la siguiente distribución: </p>
+            <img src="{{ url_for('static', filename='metricas.png') }}" class="img-fluid rounded-4 mb-4" alt="">
+            <p>Si bien se destaca la fuerte generación de energía eléctrica mediante combustibles fósiles que muestra la gráfica, 
+              también se observa que la generación de energía eléctrica mediante centrales hidroeléctricas tiene una gran importancia. 
+              En este sentido, se destaca que, tal y como se observa en el mapa expuesto a continuación, la mayor parte embalses se 
+              encuentran en las regiones del centro y oeste del país, constituyendo la escasez de agua en esta última región un problema 
+              recurrente; por lo que es de vital relevancia contar con herramientas que contribuyan a regular el consumo de agua en esas zonas.</p>
+            <img src="{{ url_for('static', filename='mapa.png') }}" class="img-fluid rounded-4 mb-4" alt="">
+            <p>En particular, el presente proyecto se concentrará en la Región de Cuyo, en la provincia de Mendoza, donde la 
+                generación de energía eléctrica aprovechando el potencial del agua tiene una gran participación, así como también 
+                las sequías. El cuerpo de agua a estudiar será el Río Mendoza, ya que abastece el principal dique de la provincia, 
+                el Dique Potrerillos.</p>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="content ps-0 ps-lg-5">
+              
+                <img src="{{ url_for('static', filename='tunel.png') }}" class="img-fluid rounded-4 mb-4" alt="">
+              <p>Continuando con la contextualización del proyecto, los Objetivos de Desarrollo Sostenible (ODS) constituyen una 
+                serie de objetivos interconectados a nivel global, que cada nación se compromete a cumplir en la medida que sea 
+                posible, de manera de lograr un futuro mejor y más sostenible para todos. Considerando esto último, el presente 
+                trabajo se apoya en el ODS número doce, “Producción y Consumo Responsables”, que propone garantizar modalidades de 
+                consumo y producción sostenibles. De esta manera, el presente proyecto tiene como finalidad proponer una herramienta 
+                para regular el consumo de agua, aportando a que la producción de energía hidroeléctrica se comprenda en un proceso 
+                más sustentable.</p>
+              <img src="{{ url_for('static', filename='ods12.png') }}" class="img-fluid rounded-4 mb-4" alt="">
+              <p>Considerando lo anteriormente expuesto, para el presente proyecto se propone un Sistema de Aprendizaje Automático 
+                Supervisado para la Predicción de Caudal [l/s] en el Río Mendoza, cuyos detalles se desarrollarán a lo largo del presente 
+                informe.</p>
+              <p>El objetivo de este sistema consiste en predecir valores de caudal del Río Mendoza considerando un dataset ampliado 
+                sintéticamente de valores de precipitación, nivel de nieve y caudales históricos. De esa forma, la predicción podrá ser 
+                enviada a la Central Hidroeléctrica ubicada en el Dique Potrerillos, para que allí se decida si debe regularse la apertura 
+                de las compuertas o no, en función de si ese caudal se considera por debajo del nivel normal o no. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /About Section -->
+
+    <!-- Ing Section -->
+    <section id="ing" class="services section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Ingeniería del Modelo</h2>
+        <p>Se seleccionó el modelo de Machine Learning más adecuado según la naturaleza del proyecto
+          y las características de los datos disponibles
+        </p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="bi bi-activity"></i>
+              </div>
+              <h3>Machine Learning Supervisado</h3>
+              <p>Se define por el uso de conjuntos de datos etiquetados para entrenar algoritmos que clasifican los
+                datos o predicen los resultados con precisión.</p>
+            </div>
+          </div><!-- End Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-broadcast"></i>
+              </div>
+              <h3>Random Forest</h3>
+              <p>Es un algoritmo de aprendizaje automático supervisado que se utiliza tanto para clasificación 
+                como para regresión. Está basado en la idea de combinar múltiples árboles de decisión para mejorar el rendimiento 
+                y reducir errores como el sobreajuste.</p>
+            </div>
+          </div><!-- End Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-easel"></i>
+              </div>
+              <h3>Parámetros</h3>
+              <p><i class="bi bi-clipboard2-pulse-fill"></i> 80% para entrenamiento</p>
+              <p> <i class="bi bi-check-circle-fill"></i> 20% para validación</p>
+            </div>
+          </div><!-- End Item -->
+        </div>
+      </div>
+    </section><!-- /Ing Section -->
+
+<!-- Team Section -->
+    <section id="team" class="team section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Nuestro Equipo</h2>
+        <p>Somos un equipo interdisciplinario comprometido con la sostenibilidad hídrica en Mendoza.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-6 col-md-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <img src="{{ url_for('static', filename='vale.jpg') }}" class="img-fluid img-team" alt="">
+              <h4>Sol Valentina Ibarra</h4>
+              <span>Estudiante Ing. Industrial</span>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-xl-6 col-md-12" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <img src="{{ url_for('static', filename='isa.jpg') }}" class="img-fluid img-team" alt="">
+              <h4>Karla Isabel Pérez</h4>
+              <span>Estudiante Ing. Sistemas Computacionales</span>
+            </div>
+          </div><!-- End Team Member -->
+        </div>
+      </div>
+    </section><!-- /Team Section -->
+
+
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-8 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">AquaCuyo</span>
+          </a>
+          <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contáctanos</h4>
+            <p>A108 Adam Street</p>
+            <p>New York, NY 535022</p>
+            <p>United States</p>
+            <p><strong>Phone:</strong> <span>+4 4444 44444 44</span></p>
+            <p><strong>Email:</strong> <span>aquacuyo@example.com</span></p>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">AquaCuyo</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a
+          href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='imagesloaded.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='isotope.pkgd.min.js') }}"></script>
+
+  <!-- Main JS File -->
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+
+</html>
