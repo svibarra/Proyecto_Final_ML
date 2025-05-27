@@ -39,8 +39,10 @@
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="#hero" class="active">Inicio<br></a></li>
-            <li><a href="#about">Sobre nosotros</a></li>
+            <li><a href="#about">Entendimiento</a></li>
+            <li><a href="#ing data">Ingeniería de Datos</a></li>
             <li><a href="#ing">Ingeniería del Modelo</a></li>
+            <li><a href="#eva">Evaluación del Modelo</a></li>
             <li><a href="#team">Equipo</a></li>
             <li><a href="#prediction">Gráfica</a></li>
           </ul>
@@ -112,7 +114,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>¿De qué trata el proyecto?<br></h2>
+        <h2>Entendimiento del negocio y los datos<br></h2>
           <p>Se propone el desarrollo de un modelo de Machine Learning Supervisado para la
           predicción del caudal en cuerpos de agua que abastecen represas hidroeléctricas,
           de manera que se utilice para alertar cada vez que se esperan sequías y pueda
@@ -196,13 +198,56 @@
       </div>
     </section><!-- /About Section -->
 
+    <!-- About Section -->
+    <section id="ing data" class="data section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Ingeniería de Datos<br></h2>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3>Generación de datos sintéticos.</h3>
+            <p>La muestra de datos reales recopilada alcanzó un tamaño de apenas cinco observaciones, lo cual resulta insuficiente para realizar análisis estadísticos robustos o entrenar modelos de aprendizaje automático con capacidad de generalización. No obstante, en esta muestra preliminar se observó una relación aparentemente lineal: a mayor nivel de nieve acumulada, mayor caudal registrado. </p>
+            <p>Se procedió a incrementar sintéticamente los datos, de manera de obtener un dataset de tamaño apropiado para entrenar el modelo. En primer lugar, se decidió simular datos para los meses de Julio y Agosto durante 10 años consecutivos, se eligieron tales meses pues la acumulación de nieve suele ser crítica, ya que condiciona fuertemente el caudal que recibe el Dique Potrerillos, y es crucial tomar decisiones acertadas respecto a la apertura o cierre de compuertas.  </p>
+            <p>Para cada día de julio y agosto, durante 10 años consecutivos, se generaron observaciones simuladas aplicando un factor de disminución progresiva que representa una pérdida estimada de caudal y nieve a medida que avanza el tiempo. Este enfoque busca modelar la pérdida de masa de nieve y la consecuente disminución de caudal típicamente observada en la región. </p>
+            
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+            <p>Se consideraron los siguientes factores de disminución progresiva: </p>
+            <ul>
+              <p>Del caudal en un 60%</p>
+            </ul>
+            <ul>
+              <p>Del nivel de nieve en un 50% </p>
+            </ul>
+            <p>Se parte de un valor base: </p>
+            <ul>
+              <p>caudal_base = 2200 l/s </p>
+            </ul>
+            <ul>
+              <p>nieve_base = 2400 m </p>
+            </ul>
+            <p>Se aplica la disminución por día y se añade aleatoriedad con ruido gaussiano usando np.random.normal(). </p>
+            <p>A continuación se exponen algunos de los datos generados sintéticamente: </p>
+            <img src="{{ url_for('static', filename='datos.jpg') }}" class="img-fluid rounded-4 mb-4" alt="">
+          </div>
+        </div>
+      </div>
+    </section><!-- /About Section -->
+
     <!-- Ing Section -->
     <section id="ing" class="services section">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Ingeniería del Modelo</h2>
-        <p>Se seleccionó el modelo de Machine Learning más adecuado según la naturaleza del proyecto
-          y las características de los datos disponibles
+        <p>Con el dataset sintético disponible se procede a entrenar un modelo de regresión lineal simple.  
+
+En primer lugar se define el predictor y lo que se desea predecir. Se establece el nivel de nieve [m] como variable independiente, y el caudal [l/s] como variable dependiente.  
+
+A continuación, se realiza la división en datos de entrenamiento y prueba, para lo que se decidió utilizar la división típica de destinar el 80% de los datos para entrenamiento, y el 20% para pruebas, utilizando las herramientas de la biblioteca scikit-learn en Python. Luego, mediante comandos de Python se realiza el entrenamiento del modelo, y también se realizan predicciones utilizando el conjunto de pruebas, para apreciar el desempeño del modelo.  
         </p>
       </div><!-- End Section Title -->
 
@@ -226,10 +271,10 @@
               <div class="icon">
                 <i class="bi bi-broadcast"></i>
               </div>
-              <h3>Random Forest</h3>
-              <p>Es un algoritmo de aprendizaje automático supervisado que se utiliza tanto para clasificación 
-                como para regresión. Está basado en la idea de combinar múltiples árboles de decisión para mejorar el rendimiento 
-                y reducir errores como el sobreajuste.</p>
+              <h3>Regresión lineal</h3>
+              <p>La regresión lineal es una técnica de aprendizaje automático que permite predecir un valor numérico a 
+                partir de una o más variables. Se basa en encontrar la línea recta que mejor se ajusta a los datos, 
+                mostrando la relación entre las variables de entrada y la salida esperada.</p>
             </div>
           </div><!-- End Item -->
 
@@ -246,6 +291,33 @@
         </div>
       </div>
     </section><!-- /Ing Section -->
+
+    <!-- About Section -->
+    <section id="eva" class="eva section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Evaluación del Modelo<br></h2>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="content ps-0 ps-lg-5">
+            <p>Como métricas para evaluar el desempeño del modelo, se decidió optar por aquellas adecuadas para ver el rendimiento de un modelo de regresión lineal, el Error Cuadrático Medio, Error Absoluto Medio y Coeficiente de Determinación. Se obtuvieron los siguientes resultados: </p>
+            <img src="{{ url_for('static', filename='datos2.jpg') }}" class="img-fluid rounded-4 mb-4" alt="">
+            <p>Los valores obtenidos muestran un modelo con buen poder predictivo y errores dentro de rangos razonables, lo que sugiere una alta correlación positiva entre el nivel de nieve acumulada y el caudal registrado. </p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="content ps-0 ps-lg-5">
+<p>La gráfica resultante permite visualizar la dispersión de los datos reales junto con la línea de regresión generada por el modelo. Se observa un patrón coherente con la hipótesis inicial: a mayor nivel de nieve, mayor caudal, confirmando así que el modelo es adecuado para representar esta relación en los meses críticos de análisis. </p>
+            <img src="{{ url_for('static', filename='grafica.jpg') }}" class="img-fluid rounded-4 mb-4" alt="">
+            </div>
+             </div>
+          </div>
+      </div>
+    </section><!-- /About Section -->
 
 <!-- Team Section -->
     <section id="team" class="team section">
